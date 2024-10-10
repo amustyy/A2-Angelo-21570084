@@ -31,9 +31,16 @@ function NewPhone(props) {
 
 	return (
         <form onSubmit={createPhone} onClick={(e) => e.stopPropagation()} className='new-phone'>
-            <input type='text' placeholder='Name' onChange={(e) => setName(e.target.value)} value={name}/>
+            <select onChange={(e) => setName(e.target.value)} value={name}>
+                <option value="" disabled selected>Select a Category</option>
+                <option value="Work" >Work</option>
+                <option value="Home" >Home</option>
+                <option value="Mobile">Mobile</option>
+                <option value="Other" >Other</option>
+            </select>
+            {/* <input type='text' placeholder='Name' onChange={(e) => setName(e.target.value)} value={name}/> */}
             <input type='text' placeholder='Phone Number' onChange={(e) => setNumber(e.target.value)} value={number}/>
-            <button className='button green' type='submit'>Add</button>
+            <button className='button green' type='submit'>Add Choiru's Phone</button>
         </form>
 	);
 }
